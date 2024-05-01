@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prediction.css') }}">
+    <title>Prediction Results</title>
+</head>
+<body>
+    <script>
+        alert("Predicted Index: {{ predicted_index }}");
+    </script>
+    <h2>Your result</h2>
+
+<table>
+    <thead>
+        <th>Attribute</th>
+        <th>Value</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>State/UT</td>
+            <td>{{ city.title() }}</td>
+        </tr>
+        <tr>
+            <td>Year</td>
+            <td>{{ year }}</td>
+        </tr>
+        <tr>
+            <td>Crime Index</td>
+            <td>{{ predicted_index }}</td>
+        </tr>
+        <tr>
+            <td>Safe/Unsafe</td>
+            <td>{{ safety_measurement }}</td>
+        </tr>
+    </tbody>
+    
+</table>
+
+<br>
+
+<a href="{{ url_for('system') }}"#determiner> <= Get Back</a>
+
+</body>
+</html>

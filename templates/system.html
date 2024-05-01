@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loco.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/system-style.css') }}">
+</head>
+<body>
+    <div id="minicircle"></div>
+
+  <div id="main">
+    <header>
+      <div class="bounding">
+        <h1 class="boundingelem1">Welcome to the dashboard</h1>
+      </div>
+      <div class="bounding">
+        <h1 class="boundingelem2">Crime Index</h1>
+      </div>
+      <div class="smallelem">
+        <h6 class="elem1">One step towards crime reduction</h6>
+      </div>
+    </header>
+    
+    <!-- <img src="crime image.jpg" alt="Image description" style="display: block; margin: auto; width: 95%; height: 150px;"> -->
+    <div id="determiner-container">
+      <form id="determiner" action="/predict" method="post">
+
+        <label for="city">Select State/UT Name:</label>
+        <select id="city" name="city">
+          <option value="a&amp;n island">A&amp;N Islands</option>
+          <option value="andhra pradesh">Andhra Pradesh</option>
+          <option value="arunachal pradesh">Arunachal Pradesh</option>
+          <option value="assam">Assam</option>
+          <option value="bihar">Bihar</option>
+          <option value="chandigarh">Chandigarh</option>
+          <option value="chhattisgarh">Chhattisgarh</option>
+          <option value="d&amp;n haveli">D&amp;N Haveli</option>
+          <option value="daman &amp; diu">Daman &amp; Diu</option>
+          <option value="delhi">Delhi</option>
+          <option value="goa">Goa</option>
+          <option value="gujarat">Gujarat</option>
+          <option value="harayana">Haryana</option>
+          <option value="himachalpradesh">Himachal Pradesh</option>
+          <option value="jammu &amp; kashmir">Jammu &amp; Kashmir</option>
+          <option value="jharkhand">Jharkhand</option>
+          <option value="karnataka">Karnataka</option>
+          <option value="kerala">Kerala</option>
+          <option value="lakshadweep">Lakshadweep</option>
+          <option value="madhyapradesh">Madhya Pradesh</option>
+          <option value="maharashtra">Maharashtra</option>
+          <option value="manipur">Manipur</option>
+          <option value="meghalaya">Meghalaya</option>
+          <option value="mizoram">Mizoram</option>
+          <option value="nagaland">Nagaland</option>
+          <option value="odisha">Odisha</option>
+          <option value="puducherry">Puducherry</option>
+          <option value="punjab">Punjab</option>
+          <option value="rajasthan">Rajasthan</option>
+          <option value="sikkim">Sikkim</option>
+          <option value="tamil nadu">Tamil Nadu</option>
+          <option value="tripura">Tripura</option>
+          <option value="uttarpradesh">Uttar Pradesh</option>
+          <option value="uttarakhand">Uttarakhand</option>
+          <option value="west bengal">West Bengal</option>
+        </select>
+        
+        <label for="year">Select Year:</label>
+        <input type="number" name="year" id="year" min="2001" max="2012" required />
+        <button type="submit">Predict</button>
+        <div id="resultBox"></div>
+      </form>
+    </div>
+    <br /><br /><br /><br /><br /> <!-- for gap below the form for scrolling effect -->
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+        integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script src="{{ url_for('static', filename='js/locomotive-scroll.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/system-script.js') }}"></script>
+
+</body>
+</html>
